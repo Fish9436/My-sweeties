@@ -1,0 +1,2563 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>甜甜時光｜Rococo Dessert Salon</title>
+
+<style>
+/* =========================================================
+   全站基本設定
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: #614b57;
+    font-family:
+        "Microsoft JhengHei",
+        "Noto Sans TC",
+        sans-serif;
+
+    background-color: #fff5f7;
+
+    /* 華麗洛可可背景 */
+    background-image:
+        radial-gradient(circle at 10% 15%, rgba(255,255,255,.95) 0 3px, transparent 4px),
+        radial-gradient(circle at 90% 25%, rgba(255,255,255,.9) 0 3px, transparent 4px),
+        radial-gradient(circle at 25% 80%, rgba(255,255,255,.8) 0 2px, transparent 3px),
+        radial-gradient(circle at 75% 70%, rgba(255,255,255,.9) 0 2px, transparent 3px),
+        linear-gradient(135deg, #fff9fa 0%, #fcecf2 45%, #f9e4ed 100%);
+
+    background-size:
+        110px 110px,
+        140px 140px,
+        90px 90px,
+        120px 120px,
+        cover;
+
+    min-height: 100vh;
+}
+
+/* 洛可可裝飾邊框 */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 12px;
+
+    pointer-events: none;
+
+    border: 1px solid rgba(183, 126, 148, .28);
+
+    border-radius: 22px;
+
+    z-index: 20;
+}
+
+/* =========================================================
+   Header
+========================================================= */
+
+header {
+    position: relative;
+
+    padding: 52px 20px 42px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.96),
+            rgba(255,239,246,.88)
+        );
+
+    border-bottom: 1px solid #dfbdca;
+
+    box-shadow:
+        0 8px 25px rgba(137, 83, 107, .08);
+
+    overflow: hidden;
+}
+
+/* 左右花飾 */
+header::before,
+header::after {
+    position: absolute;
+
+    top: 30px;
+
+    color: #bd8199;
+
+    font-size: 52px;
+
+    opacity: .65;
+
+    font-family: Georgia, serif;
+}
+
+header::before {
+    content: "❧";
+    left: 9%;
+    transform: rotate(-15deg);
+}
+
+header::after {
+    content: "❧";
+    right: 9%;
+    transform: scaleX(-1) rotate(-15deg);
+}
+
+.crown {
+    color: #bd8098;
+    font-size: 25px;
+    letter-spacing: 8px;
+}
+
+.logo {
+    display: inline-block;
+
+    margin-top: 7px;
+    padding: 6px 30px;
+
+    border-top: 1px solid #c995a8;
+    border-bottom: 1px solid #c995a8;
+
+    color: #9d6279;
+
+    font-size: 13px;
+    letter-spacing: 6px;
+}
+
+h1 {
+    margin: 10px 0 6px;
+
+    color: #884f68;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(38px, 8vw, 62px);
+
+    font-weight: normal;
+
+    letter-spacing: 5px;
+
+    text-shadow:
+        1px 1px 0 white;
+}
+
+.subtitle {
+    margin: 0;
+
+    color: #9c7a87;
+
+    font-size: 15px;
+}
+
+/* =========================================================
+   Main
+========================================================= */
+
+main {
+    width: min(1120px, 92%);
+
+    margin: auto;
+
+    padding: 40px 0 75px;
+}
+
+.intro {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.intro h2 {
+    margin: 8px 0;
+
+    color: #85546a;
+
+    font-family: Georgia, serif;
+
+    font-weight: normal;
+}
+
+.intro p {
+    color: #9b7b86;
+}
+
+.decorative-line {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    width: min(520px, 90%);
+
+    margin: 18px auto;
+
+    color: #b77891;
+
+    font-size: 20px;
+}
+
+.decorative-line::before,
+.decorative-line::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #c796a8,
+            transparent
+        );
+}
+
+/* =========================================================
+   模式選擇
+========================================================= */
+
+.mode-container {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+    margin-bottom: 38px;
+}
+
+.mode-card {
+    position: relative;
+
+    padding: 30px 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.98),
+            rgba(255,242,247,.96)
+        );
+
+    border: 1px solid #ddb9c8;
+
+    border-radius: 24px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 28px rgba(133, 75, 102, .10),
+        inset 0 0 0 5px rgba(255,255,255,.65);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+.mode-card::before,
+.mode-card::after {
+    position: absolute;
+
+    color: #c68ba1;
+
+    font-size: 20px;
+
+    opacity: .65;
+}
+
+.mode-card::before {
+    content: "❦";
+    top: 12px;
+    left: 17px;
+}
+
+.mode-card::after {
+    content: "❦";
+    bottom: 12px;
+    right: 17px;
+    transform: rotate(180deg);
+}
+
+.mode-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 18px 34px rgba(133, 75, 102, .16),
+        inset 0 0 0 5px rgba(255,255,255,.7);
+}
+
+.mode-card.active {
+    background:
+        linear-gradient(
+            145deg,
+            #fff9fb,
+            #f9dfe9
+        );
+
+    border: 2px solid #bd8097;
+
+    box-shadow:
+        0 16px 32px rgba(133, 75, 102, .17);
+}
+
+.mode-icon {
+    font-size: 52px;
+
+    margin-bottom: 8px;
+
+    filter:
+        drop-shadow(0 5px 5px rgba(130,80,100,.12));
+}
+
+.mode-card h3 {
+    margin: 4px 0 8px;
+
+    color: #87546a;
+
+    font-family: Georgia, serif;
+
+    font-size: 23px;
+
+    font-weight: normal;
+}
+
+.mode-card p {
+    margin: 0;
+
+    color: #9c7a85;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+/* =========================================================
+   內容
+========================================================= */
+
+.content-panel {
+    display: none;
+
+    animation: dessertFade .55s ease both;
+}
+
+.content-panel.active {
+    display: block;
+}
+
+@keyframes dessertFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(.99);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+/* 每次換甜點的動畫 */
+.dessert-card.change-animation {
+    animation: cardFade .45s ease;
+}
+
+@keyframes cardFade {
+
+    0% {
+        opacity: .25;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* =========================================================
+   卡片
+========================================================= */
+
+.dessert-card {
+    overflow: hidden;
+
+    background: rgba(255,255,255,.96);
+
+    border: 1px solid #dfbdca;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 18px 45px rgba(119, 66, 91, .13);
+
+    position: relative;
+}
+
+.dessert-card::before {
+    content: "✦";
+
+    position: absolute;
+
+    top: 12px;
+    right: 20px;
+
+    color: #c5899e;
+
+    font-size: 22px;
+
+    z-index: 2;
+}
+
+/* =========================================================
+   吃甜點
+========================================================= */
+
+.dessert-top {
+    display: grid;
+
+    grid-template-columns: .9fr 1.1fr;
+
+    min-height: 390px;
+}
+
+.dessert-visual {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 35px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff 0 25%,
+            #fff4f8 55%,
+            #f3d6e1 100%
+        );
+
+    border-right: 1px solid #ecd1dc;
+
+    overflow: hidden;
+}
+
+/* 彩色裝飾小元素 */
+.dessert-visual::before {
+    content: "✦  ❀  ✧  ❁";
+
+    position: absolute;
+
+    top: 22px;
+    left: 20px;
+
+    color: #cf91a7;
+
+    font-size: 20px;
+
+    letter-spacing: 8px;
+
+    opacity: .8;
+}
+
+.dessert-visual::after {
+    content: "❦  ✦  ❧";
+
+    position: absolute;
+
+    bottom: 20px;
+    right: 20px;
+
+    color: #b98198;
+
+    font-size: 22px;
+
+    letter-spacing: 6px;
+
+    opacity: .8;
+}
+
+.dessert-emoji {
+    width: 235px;
+    height: 235px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffffff,
+            #fff6f9
+        );
+
+    border: 6px solid rgba(255,255,255,.9);
+
+    outline: 1px solid #d5a1b2;
+
+    box-shadow:
+        0 14px 35px rgba(138, 74, 100, .18),
+        0 0 0 12px rgba(255,255,255,.35);
+
+    font-size: 115px;
+
+    position: relative;
+
+    z-index: 1;
+
+    transition:
+        transform .35s ease;
+}
+
+.dessert-emoji:hover {
+    transform: scale(1.06) rotate(2deg);
+}
+
+/* =========================================================
+   甜點資訊
+========================================================= */
+
+.dessert-info {
+    padding: 38px 40px;
+}
+
+.small-label {
+    display: inline-block;
+
+    padding: 6px 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f6d7e3,
+            #eed0dd
+        );
+
+    border: 1px solid #d7a5b7;
+
+    color: #945a72;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+}
+
+.dessert-info h2 {
+    margin: 15px 0 10px;
+
+    color: #7e4b61;
+
+    font-family: Georgia, serif;
+
+    font-size: 38px;
+
+    font-weight: normal;
+}
+
+.description {
+    color: #7f6972;
+
+    line-height: 1.9;
+
+    font-size: 15px;
+}
+
+.reason {
+    margin-top: 22px;
+
+    padding: 17px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff7fa,
+            #fcebf2
+        );
+
+    border-left: 4px solid #c4879e;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 4px 12px rgba(150,90,110,.05);
+}
+
+.reason strong {
+    color: #92556d;
+}
+
+.reason p {
+    margin: 7px 0 0;
+
+    line-height: 1.7;
+}
+
+/* =========================================================
+   店鋪 / 網站資訊
+========================================================= */
+
+.shop-box {
+    margin-top: 22px;
+
+    padding: 18px;
+
+    background: #fff;
+
+    border: 1px solid #e0c1cc;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 15px rgba(130,75,100,.06);
+}
+
+.shop-title {
+    color: #875269;
+
+    font-size: 15px;
+
+    font-weight: bold;
+}
+
+.shop-name {
+    margin-top: 7px;
+
+    color: #8d5068;
+
+    font-family: Georgia, serif;
+
+    font-size: 21px;
+}
+
+.shop-address {
+    margin-top: 7px;
+
+    color: #74616a;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+.shop-type {
+    display: inline-block;
+
+    margin-top: 9px;
+
+    padding: 4px 9px;
+
+    border-radius: 15px;
+
+    background: #f5e1e8;
+
+    color: #9b6378;
+
+    font-size: 12px;
+}
+
+.shop-link {
+    display: block;
+
+    margin-top: 12px;
+
+    padding: 12px 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b87891,
+            #92556d
+        );
+
+    color: white;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    transition: .2s;
+}
+
+.shop-link:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 14px rgba(137,75,100,.2);
+}
+
+.data-note {
+    margin-top: 8px;
+
+    color: #aa929b;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+/* =========================================================
+   製作甜點
+========================================================= */
+
+.make-header {
+    padding: 35px 30px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff,
+            #fff0f5
+        );
+
+    border-bottom: 1px solid #ead0da;
+}
+
+.make-header h2 {
+    margin: 10px 0 7px;
+
+    color: #814f65;
+
+    font-family: Georgia, serif;
+
+    font-size: 36px;
+
+    font-weight: normal;
+}
+
+.make-header p {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #947680;
+
+    line-height: 1.8;
+}
+
+.make-body {
+    display: grid;
+
+    grid-template-columns: .75fr 1.25fr;
+}
+
+.ingredients {
+    padding: 32px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fffafb,
+            #fff5f8
+        );
+
+    border-right: 1px solid #ead0da;
+}
+
+.ingredients h3,
+.steps h3 {
+    margin-top: 0;
+
+    color: #8b576c;
+
+    font-family: Georgia, serif;
+
+    font-weight: normal;
+
+    font-size: 21px;
+}
+
+.ingredients ul {
+    padding-left: 23px;
+
+    line-height: 2.15;
+}
+
+.ingredients li {
+    color: #77636c;
+}
+
+.ingredients li::marker {
+    color: #c4839b;
+}
+
+.steps {
+    padding: 32px;
+}
+
+.step {
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    gap: 20px;
+
+    margin-bottom: 24px;
+
+    padding-bottom: 24px;
+
+    border-bottom: 1px dashed #d9b8c5;
+
+    animation: stepFade .5s ease both;
+}
+
+.step:nth-child(2) {
+    animation-delay: .08s;
+}
+
+.step:nth-child(3) {
+    animation-delay: .16s;
+}
+
+.step:nth-child(4) {
+    animation-delay: .24s;
+}
+
+@keyframes stepFade {
+
+    from {
+        opacity: 0;
+        transform: translateX(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+.step:last-child {
+    border-bottom: none;
+}
+
+.step-picture {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff,
+            #fce8f0
+        );
+
+    border: 1px solid #ddb8c6;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 7px 16px rgba(130,75,100,.09);
+
+    font-size: 48px;
+
+    transition: .25s;
+}
+
+.step-picture:hover {
+    transform: rotate(-3deg) scale(1.04);
+}
+
+.step-number {
+    color: #b06c84;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.step h4 {
+    margin: 5px 0 7px;
+
+    color: #795063;
+
+    font-size: 18px;
+}
+
+.step p {
+    margin: 0;
+
+    color: #7e6a72;
+
+    line-height: 1.8;
+
+    font-size: 14px;
+}
+
+/* =========================================================
+   按鈕
+========================================================= */
+
+.button-area {
+    padding: 28px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff7fa,
+            #fceaf1
+        );
+
+    border-top: 1px solid #e9ced8;
+}
+
+.change-btn {
+    position: relative;
+
+    min-width: 220px;
+
+    padding: 15px 34px;
+
+    border: 2px solid #dca9ba;
+
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c88ca3,
+            #9d5d76
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 18px rgba(136,73,98,.24),
+        inset 0 1px 1px rgba(255,255,255,.5);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.change-btn::before {
+    content: "✦";
+
+    margin-right: 8px;
+
+    color: #ffe8f1;
+}
+
+.change-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+
+    box-shadow:
+        0 12px 25px rgba(136,73,98,.30),
+        inset 0 1px 1px rgba(255,255,255,.6);
+}
+
+.change-btn:active {
+    transform: scale(.96);
+}
+
+/* =========================================================
+   Footer
+========================================================= */
+
+footer {
+    padding: 28px 20px 45px;
+
+    text-align: center;
+
+    color: #a1828d;
+
+    font-size: 13px;
+
+    line-height: 2;
+}
+
+/* =========================================================
+   手機版
+========================================================= */
+
+@media (max-width: 700px) {
+
+    body::before {
+        inset: 5px;
+    }
+
+    header {
+        padding: 42px 18px 32px;
+    }
+
+    header::before,
+    header::after {
+        display: none;
+    }
+
+    h1 {
+        font-size: 39px;
+        letter-spacing: 3px;
+    }
+
+    .logo {
+        padding: 5px 18px;
+        letter-spacing: 4px;
+    }
+
+    main {
+        width: 92%;
+
+        padding-top: 30px;
+    }
+
+    .intro {
+        margin-bottom: 25px;
+    }
+
+    /* ★ 手機版上下排列 ★ */
+
+    .mode-container {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        margin-bottom: 30px;
+    }
+
+    .mode-card {
+        width: 100%;
+
+        min-height: 145px;
+
+        padding: 25px 20px;
+    }
+
+    .mode-icon {
+        font-size: 43px;
+    }
+
+    .mode-card h3 {
+        font-size: 22px;
+    }
+
+    .mode-card p {
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+    /* 吃甜點 */
+
+    .dessert-top {
+        display: flex;
+
+        flex-direction: column;
+    }
+
+    .dessert-visual {
+        min-height: 280px;
+
+        padding: 35px 20px;
+
+        border-right: none;
+
+        border-bottom: 1px solid #ecd1dc;
+    }
+
+    .dessert-emoji {
+        width: 190px;
+        height: 190px;
+
+        font-size: 92px;
+    }
+
+    .dessert-info {
+        padding: 28px 22px;
+    }
+
+    .dessert-info h2 {
+        font-size: 30px;
+    }
+
+    .description {
+        font-size: 15px;
+
+        line-height: 1.9;
+    }
+
+    .shop-box {
+        padding: 17px;
+    }
+
+    .shop-name {
+        font-size: 20px;
+
+        line-height: 1.5;
+    }
+
+    .shop-address {
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+    .shop-link {
+        min-height: 48px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        font-size: 16px;
+    }
+
+    /* 製作甜點 */
+
+    .make-header {
+        padding: 28px 20px;
+    }
+
+    .make-header h2 {
+        font-size: 30px;
+    }
+
+    .make-body {
+        display: flex;
+
+        flex-direction: column;
+    }
+
+    .ingredients {
+        padding: 27px 22px;
+
+        border-right: none;
+
+        border-bottom: 1px solid #ead0da;
+    }
+
+    .ingredients ul {
+        line-height: 2.2;
+    }
+
+    .steps {
+        padding: 28px 20px;
+    }
+
+    .step {
+        grid-template-columns: 78px 1fr;
+
+        gap: 15px;
+
+        margin-bottom: 25px;
+
+        padding-bottom: 25px;
+    }
+
+    .step-picture {
+        width: 78px;
+        height: 78px;
+
+        font-size: 37px;
+    }
+
+    .step h4 {
+        font-size: 17px;
+    }
+
+    .step p {
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+    /* 手機按鈕加大 */
+
+    .button-area {
+        padding: 25px 18px;
+    }
+
+    .change-btn {
+        width: 100%;
+
+        min-height: 52px;
+
+        padding: 14px 20px;
+
+        font-size: 17px;
+    }
+}
+
+/* =========================================================
+   更小的手機
+========================================================= */
+
+@media (max-width: 390px) {
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .dessert-visual {
+        min-height: 245px;
+    }
+
+    .dessert-emoji {
+        width: 165px;
+        height: 165px;
+
+        font-size: 80px;
+    }
+
+    .step {
+        grid-template-columns: 65px 1fr;
+        gap: 12px;
+    }
+
+    .step-picture {
+        width: 65px;
+        height: 65px;
+
+        font-size: 31px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="crown">✦ ❦ ✦</div>
+
+    <div class="logo">
+        DESSERT PARLOR
+    </div>
+
+    <h1>甜甜時光</h1>
+
+    <p class="subtitle">
+        Rococo Dessert Salon · 今天也值得一點甜
+    </p>
+
+</header>
+
+
+<main>
+
+    <section class="intro">
+
+        <h2>今天想怎麼享受甜點？</h2>
+
+        <div class="decorative-line">
+            ❦
+        </div>
+
+        <p>
+            不知道吃什麼，也不知道做什麼？
+            讓甜甜時光替你挑一個吧。
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         模式選擇
+    ========================== -->
+
+    <section class="mode-container">
+
+        <div
+            class="mode-card active"
+            id="eatMode"
+            onclick="showMode('eat')"
+        >
+
+            <div class="mode-icon">
+                🍰
+            </div>
+
+            <h3>
+                吃甜點
+            </h3>
+
+            <p>
+                找一間店，享受今天的小小幸福。
+            </p>
+
+        </div>
+
+
+        <div
+            class="mode-card"
+            id="makeMode"
+            onclick="showMode('make')"
+        >
+
+            <div class="mode-icon">
+                🧁
+            </div>
+
+            <h3>
+                製作甜點
+            </h3>
+
+            <p>
+                在家動手做，完成屬於自己的甜點。
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         吃甜點
+    ========================== -->
+
+    <section
+        class="content-panel active"
+        id="eatPanel"
+    >
+
+        <div
+            class="dessert-card"
+            id="eatCard"
+        >
+
+            <div class="dessert-top">
+
+                <div class="dessert-visual">
+
+                    <div
+                        class="dessert-emoji"
+                        id="eatEmoji"
+                    >
+                        🍓
+                    </div>
+
+                </div>
+
+
+                <div class="dessert-info">
+
+                    <span class="small-label">
+                        ♡ 今日推薦
+                    </span>
+
+                    <h2 id="eatName">
+                        草莓蛋糕
+                    </h2>
+
+                    <p
+                        class="description"
+                        id="eatDescription"
+                    ></p>
+
+
+                    <div class="reason">
+
+                        <strong>
+                            ♡ 為什麼推薦？
+                        </strong>
+
+                        <p id="eatReason"></p>
+
+                    </div>
+
+
+                    <div class="shop-box">
+
+                        <div class="shop-title">
+                            ♡ 推薦店鋪
+                        </div>
+
+                        <div
+                            class="shop-name"
+                            id="eatShop"
+                        ></div>
+
+                        <div
+                            class="shop-address"
+                            id="eatAddress"
+                        ></div>
+
+                        <span
+                            class="shop-type"
+                            id="eatType"
+                        ></span>
+
+                        <a
+                            class="shop-link"
+                            id="eatLink"
+                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            前往官方網站
+                        </a>
+
+                        <div class="data-note">
+                            ※ 店家與網站資料為網站內建示範資料，
+                            不代表即時營業狀態、庫存或目前菜單。
+                            前往前建議自行確認。
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="button-area">
+
+                <button
+                    class="change-btn"
+                    onclick="randomEat()"
+                >
+                    換一個推薦
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         製作甜點
+    ========================== -->
+
+    <section
+        class="content-panel"
+        id="makePanel"
+    >
+
+        <div
+            class="dessert-card"
+            id="makeCard"
+        >
+
+            <div class="make-header">
+
+                <span class="small-label">
+                    ♡ 今日 DIY
+                </span>
+
+                <h2 id="makeName"></h2>
+
+                <p id="makeDescription"></p>
+
+            </div>
+
+
+            <div class="make-body">
+
+                <div class="ingredients">
+
+                    <h3>
+                        ♡ 材料清單
+                    </h3>
+
+                    <ul id="ingredientList"></ul>
+
+                </div>
+
+
+                <div class="steps">
+
+                    <h3>
+                        ♡ 圖文製作步驟
+                    </h3>
+
+                    <div id="stepsContainer"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="button-area">
+
+                <button
+                    class="change-btn"
+                    onclick="randomMake()"
+                >
+                    換一個甜點
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    ❦ ✦ 甜甜時光 Dessert Time ✦ ❦
+
+    <br>
+
+    網站內建甜點資料 · 非即時查詢服務
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   吃甜點資料
+   店家資料為網站內建示範資料
+========================================================= */
+
+const eatDesserts = [
+
+    {
+        name: "草莓蛋糕",
+        emoji: "🍓",
+
+        description:
+            "柔軟蛋糕、鮮奶油與酸甜草莓交織，是最經典的幸福系甜點。",
+
+        reason:
+            "想吃一個可愛、甜甜又有水果香氣的甜點時，草莓蛋糕很適合。",
+
+        shop:
+            "亞尼克夢想村",
+
+        address:
+            "台北市士林區長春街4巷1號",
+
+        type:
+            "實體店鋪",
+
+        link:
+            "https://www.yannick.com.tw/"
+
+    },
+
+
+    {
+        name: "提拉米蘇",
+        emoji: "☕",
+
+        description:
+            "咖啡、可可與濃郁乳酪交織，苦甜平衡，是很經典的義式甜點。",
+
+        reason:
+            "如果你不喜歡太甜，又喜歡咖啡香氣，提拉米蘇是很不錯的選擇。",
+
+        shop:
+            "Lady M Taiwan",
+
+        address:
+            "台北市信義區松高路19號",
+
+        type:
+            "實體店鋪",
+
+        link:
+            "https://www.ladym.com.tw/"
+
+    },
+
+
+    {
+        name: "可麗露",
+        emoji: "🧁",
+
+        description:
+            "外層焦糖般酥脆，內部柔軟濕潤，是非常有法式氣息的小甜點。",
+
+        reason:
+            "想吃一個精緻、小巧又有口感變化的甜點，可以試試可麗露。",
+
+        shop:
+            "香草航空 Vanilla Air Bakery",
+
+        address:
+            "台北市中山區南京西路18巷6弄5號",
+
+        type:
+            "實體店鋪",
+
+        link:
+            "https://www.google.com/search?q=%E5%8F%B0%E5%8C%97+%E5%8F%AF%E9%BA%97%E9%9C%B2"
+
+    },
+
+
+    {
+        name: "檸檬塔",
+        emoji: "🍋",
+
+        description:
+            "酥脆塔皮與酸甜檸檬餡搭配，清爽又有香氣。",
+
+        reason:
+            "如果你已經吃膩濃郁奶油甜點，檸檬塔的酸味會讓味覺重新醒過來。",
+
+        shop:
+            "法朋烘焙甜點坊 Le Ruban Pâtisserie",
+
+        address:
+            "台北市大安區仁愛路四段300巷20弄5號",
+
+        type:
+            "實體店鋪",
+
+        link:
+            "https://www.lereve.com.tw/"
+
+    },
+
+
+    {
+        name: "千層蛋糕",
+        emoji: "🎂",
+
+        description:
+            "薄薄的餅皮一層一層堆疊，再搭配細緻奶油，是很有儀式感的下午茶。",
+
+        reason:
+            "想吃蛋糕但又不想吃普通海綿蛋糕時，千層會是很好的選擇。",
+
+        shop:
+            "Lady M Taiwan",
+
+        address:
+            "台北市信義區松高路19號",
+
+        type:
+            "實體店鋪",
+
+        link:
+            "https://www.ladym.com.tw/"
+
+    },
+
+
+    {
+        name: "焦糖布丁",
+        emoji: "🍮",
+
+        description:
+            "滑嫩布丁搭配微苦焦糖，簡單卻非常經典。",
+
+        reason:
+            "如果完全不知道想吃什麼，布丁通常是很安全又舒服的選擇。",
+
+        shop:
+            "貳樓餐廳 Second Floor",
+
+        address:
+            "台北市信義區松仁路90號",
+
+        type:
+            "實體店鋪",
+
+        link:
+            "https://www.secondfloor.com.tw/"
+
+    },
+
+
+    {
+        name: "舒芙蕾",
+        emoji: "🥞",
+
+        description:
+            "鬆軟蓬鬆、入口即化，通常搭配鮮奶油、水果或糖漿。",
+
+        reason:
+            "如果今天想吃一個可愛又有儀式感的下午茶，舒芙蕾非常適合。",
+
+        shop:
+            "FLIPPER'S 奇蹟的舒芙蕾鬆餅",
+
+        address:
+            "台北市信義區忠孝東路五段8號",
+
+        type:
+            "實體店鋪",
+
+        link:
+            "https://www.flippers-pancake.tw/"
+
+    },
+
+
+    {
+        name: "芋泥甜點",
+        emoji: "🍠",
+
+        description:
+            "綿密芋泥帶有自然香氣，是很受歡迎的台灣風味甜點。",
+
+        reason:
+            "喜歡芋頭香氣的人很適合選它，甜度通常也不會過於刺激。",
+
+        shop:
+            "先吃甜點",
+
+        address:
+            "台北市大安區忠孝東路四段216巷32弄8號",
+
+        type:
+            "實體店鋪",
+
+        link:
+            "https://www.google.com/search?q=%E5%8F%B0%E5%8C%97+%E8%8A%8B%E6%B3%A5%E7%94%9C%E9%BB%9E"
+
+    },
+
+
+    {
+        name: "馬卡龍",
+        emoji: "🌈",
+
+        description:
+            "色彩繽紛的小巧法式甜點，外殼微脆，內餡柔軟。",
+
+        reason:
+            "如果今天想要的是漂亮、可愛、有儀式感的甜點，馬卡龍非常適合。",
+
+        shop:
+            "Pierre Hermé Paris Taiwan",
+
+        address:
+            "台北市大安區忠孝東路四段45號",
+
+        type:
+            "實體店鋪",
+
+        link:
+            "https://www.pierreherme.com.tw/"
+
+    },
+
+
+    {
+        name: "蝴蝶酥",
+        emoji: "🥐",
+
+        description:
+            "酥脆、焦糖香氣明顯的小點心，非常適合配咖啡或茶。",
+
+        reason:
+            "如果只想吃一點點甜，不想吃厚重蛋糕，蝴蝶酥很適合。",
+
+        shop:
+            "統一時代百貨甜點專區",
+
+        address:
+            "台北市信義區忠孝東路五段8號",
+
+        type:
+            "實體店鋪",
+
+        link:
+            "https://www.google.com/search?q=%E5%8F%B0%E5%8C%97+%E8%9D%B4%E8%9D%B6%E9%85%A5"
+
+    },
+
+
+    {
+        name: "生乳捲",
+        emoji: "🥛",
+
+        description:
+            "柔軟蛋糕包著細緻鮮奶油，口感輕盈又帶著濃郁奶香。",
+
+        reason:
+            "喜歡鮮奶油蛋糕但又不想要太厚重，可以選生乳捲。",
+
+        shop:
+            "亞尼克夢想村",
+
+        address:
+            "台北市士林區長春街4巷1號",
+
+        type:
+            "實體店鋪",
+
+        link:
+            "https://www.yannick.com.tw/"
+
+    },
+
+
+    {
+        name: "巧克力塔",
+        emoji: "🍫",
+
+        description:
+            "濃郁巧克力與酥脆塔皮結合，是巧克力控很難拒絕的甜點。",
+
+        reason:
+            "今天如果就是想吃巧克力，那就不要猶豫了。",
+
+        shop:
+            "法朋烘焙甜點坊 Le Ruban Pâtisserie",
+
+        address:
+            "台北市大安區仁愛路四段300巷20弄5號",
+
+        type:
+            "實體店鋪",
+
+        link:
+            "https://www.lereve.com.tw/"
+
+    },
+
+];
+
+
+/* =========================================================
+   DIY 甜點資料
+========================================================= */
+
+const makeDesserts = [
+
+    {
+        name: "巧克力布朗尼",
+
+        description:
+            "濃郁巧克力香氣，外層微脆、裡面濕潤，很適合甜點新手。",
+
+        ingredients: [
+            "無鹽奶油 100g",
+            "黑巧克力 120g",
+            "砂糖 80g",
+            "雞蛋 2 顆",
+            "低筋麵粉 70g",
+            "無糖可可粉 20g",
+            "鹽 少量"
+        ],
+
+        steps: [
+
+            {
+                icon: "🧈",
+                title: "融化奶油與巧克力",
+                text:
+                    "將奶油與黑巧克力隔水加熱，慢慢攪拌直到完全融化，放在一旁稍微降溫。"
+            },
+
+            {
+                icon: "🥚",
+                title: "加入雞蛋",
+                text:
+                    "雞蛋一次加入一顆，加入後充分攪拌，讓蛋液和巧克力混合均勻。"
+            },
+
+            {
+                icon: "🥣",
+                title: "加入粉類",
+                text:
+                    "將麵粉與可可粉過篩加入，輕輕攪拌到看不到乾粉即可，不需要過度攪拌。"
+            },
+
+            {
+                icon: "🔥",
+                title: "烘烤",
+                text:
+                    "倒入鋪好烘焙紙的模具，以 170°C 預熱後烘烤約 20～25 分鐘。"
+            }
+
+        ]
+    },
+
+
+    {
+        name: "草莓奶油杯",
+
+        description:
+            "不用烤箱也可以完成的可愛甜點，非常適合第一次做甜點的人。",
+
+        ingredients: [
+            "草莓 8～10 顆",
+            "鮮奶油 200ml",
+            "砂糖 15g",
+            "消化餅乾 6 片",
+            "原味優格 100g"
+        ],
+
+        steps: [
+
+            {
+                icon: "🍓",
+                title: "準備草莓",
+                text:
+                    "將草莓洗乾淨、去除蒂頭，再切成適合入口的小塊。"
+            },
+
+            {
+                icon: "🥛",
+                title: "打發鮮奶油",
+                text:
+                    "鮮奶油加入砂糖，用打蛋器打至蓬鬆並能維持形狀。"
+            },
+
+            {
+                icon: "🍪",
+                title: "製作餅乾層",
+                text:
+                    "將消化餅乾放入乾淨袋子中壓碎，成為甜點底層。"
+            },
+
+            {
+                icon: "🍓",
+                title: "組合甜點",
+                text:
+                    "在透明杯中依序放入餅乾、優格、鮮奶油與草莓，可以重複堆疊。"
+            }
+
+        ]
+    },
+
+
+    {
+        name: "檸檬磅蛋糕",
+
+        description:
+            "帶著清爽檸檬香氣的簡單蛋糕，很適合搭配下午茶。",
+
+        ingredients: [
+            "無鹽奶油 100g",
+            "砂糖 80g",
+            "雞蛋 2 顆",
+            "低筋麵粉 120g",
+            "檸檬汁 20ml",
+            "檸檬皮屑 少量"
+        ],
+
+        steps: [
+
+            {
+                icon: "🧈",
+                title: "打發奶油",
+                text:
+                    "軟化奶油加入砂糖，攪拌到顏色變淡、質地變得蓬鬆。"
+            },
+
+            {
+                icon: "🥚",
+                title: "加入雞蛋",
+                text:
+                    "將雞蛋分次加入，每次都攪拌均勻後再加入下一次。"
+            },
+
+            {
+                icon: "🍋",
+                title: "加入檸檬",
+                text:
+                    "加入檸檬汁與檸檬皮屑，攪拌均勻讓香氣散布在麵糊中。"
+            },
+
+            {
+                icon: "🔥",
+                title: "放入烤箱",
+                text:
+                    "加入低筋麵粉拌勻，倒入模具，以 170°C 烤約 35～40 分鐘。"
+            }
+
+        ]
+    },
+
+
+    {
+        name: "焦糖布丁",
+
+        description:
+            "滑嫩的布丁配上微苦焦糖，材料簡單又很有成就感。",
+
+        ingredients: [
+            "雞蛋 2 顆",
+            "牛奶 250ml",
+            "砂糖 40g",
+            "香草精 少量",
+            "砂糖 30g（焦糖）"
+        ],
+
+        steps: [
+
+            {
+                icon: "🍯",
+                title: "製作焦糖",
+                text:
+                    "砂糖放入鍋中，小火加熱到融化並變成漂亮的琥珀色。"
+            },
+
+            {
+                icon: "🥛",
+                title: "加熱牛奶",
+                text:
+                    "牛奶與砂糖稍微加熱，讓砂糖溶解即可，不需要煮沸。"
+            },
+
+            {
+                icon: "🥚",
+                title: "製作布丁液",
+                text:
+                    "雞蛋打散，慢慢加入溫牛奶並攪拌，再加入少量香草精。"
+            },
+
+            {
+                icon: "♨️",
+                title: "蒸熟並冷藏",
+                text:
+                    "布丁液過篩後倒入容器，以隔水方式蒸熟，放涼後冷藏即可。"
+            }
+
+        ]
+    },
+
+
+    {
+        name: "抹茶巴斯克乳酪蛋糕",
+
+        description:
+            "濃郁乳酪搭配淡淡抹茶香氣，外層焦香、內部柔滑。",
+
+        ingredients: [
+            "奶油乳酪 250g",
+            "砂糖 60g",
+            "雞蛋 2 顆",
+            "鮮奶油 150ml",
+            "低筋麵粉 10g",
+            "抹茶粉 8g"
+        ],
+
+        steps: [
+
+            {
+                icon: "🧀",
+                title: "軟化乳酪",
+                text:
+                    "奶油乳酪放至室溫，加入砂糖攪拌至滑順。"
+            },
+
+            {
+                icon: "🥚",
+                title: "加入雞蛋",
+                text:
+                    "雞蛋分次加入，每次充分攪拌均勻，避免留下蛋液。"
+            },
+
+            {
+                icon: "🍵",
+                title: "加入抹茶",
+                text:
+                    "抹茶粉與低筋麵粉先混合過篩，再加入麵糊中拌勻。"
+            },
+
+            {
+                icon: "🔥",
+                title: "高溫烘烤",
+                text:
+                    "倒入鋪好烘焙紙的模具，以 220°C 烘烤約 25～30 分鐘，表面上色即可。"
+            }
+
+        ]
+    },
+
+
+    {
+        name: "藍莓優格杯",
+
+        description:
+            "清爽、簡單又不用烤箱，適合夏天或想吃水果甜點的時候。",
+
+        ingredients: [
+            "藍莓 100g",
+            "原味優格 200g",
+            "蜂蜜 15ml",
+            "消化餅乾 5 片",
+            "鮮奶油 少量"
+        ],
+
+        steps: [
+
+            {
+                icon: "🫐",
+                title: "準備藍莓",
+                text:
+                    "將藍莓洗乾淨並瀝乾，可以保留幾顆最後裝飾。"
+            },
+
+            {
+                icon: "🍯",
+                title: "調味優格",
+                text:
+                    "原味優格加入蜂蜜攪拌均勻，依照喜好調整甜度。"
+            },
+
+            {
+                icon: "🍪",
+                title: "壓碎餅乾",
+                text:
+                    "將消化餅乾壓碎，放在透明玻璃杯最底部。"
+            },
+
+            {
+                icon: "🫐",
+                title: "分層組合",
+                text:
+                    "依序加入優格、藍莓與餅乾，最後用藍莓和鮮奶油裝飾。"
+            }
+
+        ]
+    },
+
+
+    {
+        name: "蜂蜜瑪德蓮",
+
+        description:
+            "小巧可愛的法式貝殼蛋糕，帶有奶油與蜂蜜香氣。",
+
+        ingredients: [
+            "雞蛋 2 顆",
+            "低筋麵粉 100g",
+            "砂糖 60g",
+            "蜂蜜 20g",
+            "無鹽奶油 100g",
+            "泡打粉 3g"
+        ],
+
+        steps: [
+
+            {
+                icon: "🥚",
+                title: "混合雞蛋與砂糖",
+                text:
+                    "雞蛋與砂糖攪拌均勻，不需要打發到非常蓬鬆。"
+            },
+
+            {
+                icon: "🍯",
+                title: "加入蜂蜜",
+                text:
+                    "加入蜂蜜並攪拌，讓甜味與香氣均勻分布。"
+            },
+
+            {
+                icon: "🧈",
+                title: "加入奶油與粉類",
+                text:
+                    "融化奶油後加入，再篩入低筋麵粉與泡打粉拌勻。"
+            },
+
+            {
+                icon: "🐚",
+                title: "烘烤",
+                text:
+                    "麵糊倒入瑪德蓮模具，以 180°C 烤約 10～12 分鐘即可。"
+            }
+
+        ]
+    },
+
+
+    {
+        name: "OREO 乳酪杯",
+
+        description:
+            "巧克力餅乾與奶油乳酪搭配，簡單、不需要烤箱。",
+
+        ingredients: [
+            "OREO 餅乾 10～12 片",
+            "奶油乳酪 200g",
+            "鮮奶油 100ml",
+            "砂糖 30g",
+            "牛奶 30ml"
+        ],
+
+        steps: [
+
+            {
+                icon: "🍪",
+                title: "壓碎餅乾",
+                text:
+                    "將 OREO 餅乾壓成細碎顆粒，保留少量作為最後裝飾。"
+            },
+
+            {
+                icon: "🧀",
+                title: "攪拌乳酪",
+                text:
+                    "奶油乳酪放軟後加入砂糖與牛奶，攪拌至滑順。"
+            },
+
+            {
+                icon: "🥛",
+                title: "打發鮮奶油",
+                text:
+                    "鮮奶油打發後，分次加入乳酪糊並輕輕拌勻。"
+            },
+
+            {
+                icon: "🍪",
+                title: "組合冷藏",
+                text:
+                    "餅乾與乳酪糊交錯放入杯中，冷藏至少 2 小時即可享用。"
+            }
+
+        ]
+    },
+
+
+    {
+        name: "香蕉巧克力鬆餅",
+
+        description:
+            "香蕉與巧克力的經典組合，做法簡單又很適合週末早餐。",
+
+        ingredients: [
+            "低筋麵粉 120g",
+            "雞蛋 1 顆",
+            "牛奶 100ml",
+            "香蕉 1 根",
+            "砂糖 20g",
+            "巧克力豆 30g",
+            "泡打粉 4g"
+        ],
+
+        steps: [
+
+            {
+                icon: "🍌",
+                title: "壓碎香蕉",
+                text:
+                    "香蕉放入碗中，用叉子壓成泥狀。"
+            },
+
+            {
+                icon: "🥚",
+                title: "加入液體材料",
+                text:
+                    "加入雞蛋與牛奶，再加入砂糖攪拌均勻。"
+            },
+
+            {
+                icon: "🥣",
+                title: "加入麵粉",
+                text:
+                    "加入低筋麵粉與泡打粉，攪拌至沒有明顯乾粉。"
+            },
+
+            {
+                icon: "🥞",
+                title: "煎鬆餅",
+                text:
+                    "平底鍋小火加熱，倒入適量麵糊，加入巧克力豆，兩面煎熟即可。"
+            }
+
+        ]
+    }
+
+];
+
+
+/* =========================================================
+   隨機索引
+========================================================= */
+
+let lastEat = -1;
+let lastMake = -1;
+
+
+/* =========================================================
+   模式切換
+========================================================= */
+
+function showMode(mode) {
+
+    const eatMode =
+        document.getElementById("eatMode");
+
+    const makeMode =
+        document.getElementById("makeMode");
+
+    const eatPanel =
+        document.getElementById("eatPanel");
+
+    const makePanel =
+        document.getElementById("makePanel");
+
+
+    if (mode === "eat") {
+
+        eatMode.classList.add("active");
+        makeMode.classList.remove("active");
+
+        eatPanel.classList.add("active");
+        makePanel.classList.remove("active");
+
+    } else {
+
+        makeMode.classList.add("active");
+        eatMode.classList.remove("active");
+
+        makePanel.classList.add("active");
+        eatPanel.classList.remove("active");
+
+    }
+
+}
+
+
+/* =========================================================
+   吃甜點
+========================================================= */
+
+function randomEat() {
+
+    let index;
+
+    do {
+
+        index =
+            Math.floor(
+                Math.random() * eatDesserts.length
+            );
+
+    } while (
+        index === lastEat &&
+        eatDesserts.length > 1
+    );
+
+
+    lastEat = index;
+
+    const dessert =
+        eatDesserts[index];
+
+
+    const card =
+        document.getElementById("eatCard");
+
+    card.classList.remove("change-animation");
+
+    /* 讓瀏覽器重新觸發動畫 */
+    void card.offsetWidth;
+
+    card.classList.add("change-animation");
+
+
+    document.getElementById("eatEmoji")
+        .textContent = dessert.emoji;
+
+    document.getElementById("eatName")
+        .textContent = dessert.name;
+
+    document.getElementById("eatDescription")
+        .textContent = dessert.description;
+
+    document.getElementById("eatReason")
+        .textContent = dessert.reason;
+
+    document.getElementById("eatShop")
+        .textContent = dessert.shop;
+
+    document.getElementById("eatAddress")
+        .textContent =
+        "📍 地址：" + dessert.address;
+
+    document.getElementById("eatType")
+        .textContent = dessert.type;
+
+
+    const link =
+        document.getElementById("eatLink");
+
+    link.href = dessert.link;
+
+}
+
+
+/* =========================================================
+   製作甜點
+========================================================= */
+
+function randomMake() {
+
+    let index;
+
+    do {
+
+        index =
+            Math.floor(
+                Math.random() * makeDesserts.length
+            );
+
+    } while (
+        index === lastMake &&
+        makeDesserts.length > 1
+    );
+
+
+    lastMake = index;
+
+    const dessert =
+        makeDesserts[index];
+
+
+    const card =
+        document.getElementById("makeCard");
+
+    card.classList.remove("change-animation");
+
+    void card.offsetWidth;
+
+    card.classList.add("change-animation");
+
+
+    document.getElementById("makeName")
+        .textContent = dessert.name;
+
+    document.getElementById("makeDescription")
+        .textContent = dessert.description;
+
+
+    /* 材料 */
+
+    const ingredientList =
+        document.getElementById("ingredientList");
+
+    ingredientList.innerHTML = "";
+
+
+    dessert.ingredients.forEach(
+        ingredient => {
+
+            const li =
+                document.createElement("li");
+
+            li.textContent = ingredient;
+
+            ingredientList.appendChild(li);
+
+        }
+    );
+
+
+    /* 步驟 */
+
+    const stepsContainer =
+        document.getElementById("stepsContainer");
+
+    stepsContainer.innerHTML = "";
+
+
+    dessert.steps.forEach(
+        (step, index) => {
+
+            const div =
+                document.createElement("div");
+
+            div.className = "step";
+
+
+            div.innerHTML = `
+
+                <div class="step-picture">
+                    ${step.icon}
+                </div>
+
+                <div>
+
+                    <div class="step-number">
+                        STEP ${index + 1}
+                    </div>
+
+                    <h4>
+                        ${step.title}
+                    </h4>
+
+                    <p>
+                        ${step.text}
+                    </p>
+
+                </div>
+
+            `;
+
+
+            stepsContainer.appendChild(div);
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   初始化
+========================================================= */
+
+randomEat();
+
+randomMake();
+
+</script>
+
+</body>
+</html>
